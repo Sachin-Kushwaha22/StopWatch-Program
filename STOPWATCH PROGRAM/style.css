@@ -1,0 +1,56 @@
+.container{
+    margin: auto;
+    margin-top: 100px;
+    padding: 30px;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0px 0px 20px black;
+}
+
+h1{
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 4em;
+    color: rgb(5, 1, 120);
+}
+
+#timer{
+    font-size: 7em;
+    font-family: monospace;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+button{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    border: solid;
+    border-radius: 10px;
+    height: 50px;
+    width: 120px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#startbtn{
+    background-color: rgb(26, 227, 26);
+}
+#startbtn:hover{
+    background-color: rgb(26, 177, 26);
+}
+#stopbtn{
+    background-color: rgb(255, 17, 0);
+}
+#stopbtn:hover{
+    background-color: rgb(190, 7, 7);
+}
+#resetbtn{
+    background-color: rgb(2, 103, 255);
+}
+#resetbtn:hover{
+    background-color: rgb(0, 82, 139);
+}
+
