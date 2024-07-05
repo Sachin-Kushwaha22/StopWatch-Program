@@ -1,6 +1,6 @@
 const showtimer = document.getElementById("timer");
 const startbtn = document.getElementById("startbtn");
-const stopbtn = document.getElementById("stopbtn");
+const resetbtn = document.getElementById("resetbtn");
 
 let time = null;
 let startTime = 0;
@@ -40,15 +40,25 @@ startbtn.addEventListener("click", event => {
     }
 });
 
+resetbtn.addEventListener("click", event => {
 
+    startbtn.textContent = "START";
+    startbtn.style.backgroundColor = 'rgb(26, 227, 26)';
+    // creating hover color change property
+    startbtn.addEventListener("mouseover", event => {
+        startbtn.style.backgroundColor = 'rgb(26, 177, 26)';
+    });
+    startbtn.addEventListener("mouseout", event => {
+        startbtn.style.backgroundColor = 'rgb(26, 227, 26)';
+    });
 
-function reset() {
     clearInterval(time);
     elapsedTime = 0;
     startTime = 0;
     isRunning = false;
     showtimer.innerHTML = "00:00:00:00";
-}
+})
+
 function update() {
     elapsedTime = Date.now() - startTime;
 
