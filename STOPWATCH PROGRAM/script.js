@@ -1,22 +1,47 @@
 const showtimer = document.getElementById("timer");
+const startbtn = document.getElementById("startbtn");
+const stopbtn = document.getElementById("stopbtn");
+
 let time = null;
 let startTime = 0;
 let elapsedTime = 0;
 let isRunning = false;
 
-function start() {
+startbtn.addEventListener("click", event => {
     if (!isRunning) {
         startTime = Date.now() - elapsedTime;
         time = setInterval(update, 10);
         isRunning = true;
+
+        startbtn.textContent = "STOP";
+        startbtn.style.backgroundColor = 'rgb(255, 17, 0)';
+        // creating hover color change property
+        startbtn.addEventListener("mouseover", event => {
+            startbtn.style.backgroundColor = 'rgb(190, 7, 7)';
+        });
+        startbtn.addEventListener("mouseout", event => {
+            startbtn.style.backgroundColor = 'rgb(255, 17, 0)';
+        });
     }
-}
-function stop() {
-    if (isRunning) {
+    else {
         clearInterval(time);
         isRunning = false;
+
+        startbtn.textContent = "START";
+        startbtn.style.backgroundColor = 'rgb(26, 227, 26)';
+
+        // creating hover color change property
+        startbtn.addEventListener("mouseover", event => {
+            startbtn.style.backgroundColor = 'rgb(26, 177, 26)';
+        });
+        startbtn.addEventListener("mouseout", event => {
+            startbtn.style.backgroundColor = 'rgb(26, 227, 26)';
+        });
     }
-}
+});
+
+
+
 function reset() {
     clearInterval(time);
     elapsedTime = 0;
